@@ -6,7 +6,7 @@ var model={
     currentCat:null,
  };
 
-var octupus={
+var octopus={
 
     getCatList:function(){
         return model.cats;
@@ -63,7 +63,7 @@ var viewOfList={
     },
     render:function(){
         var li,img;
-        var catList=octupus.getCatList();
+        var catList=octopus.getCatList();
         this.ul.innerHTML='';
         for(var i=0;i<catList.length;i++){
             li=document.createElement('li');
@@ -74,8 +74,8 @@ var viewOfList={
 
             img.onclick=(function(catCopy){
                 return function(){
-                   octupus.closeAdmin();
-                   octupus.setCurrentCat(catCopy);
+                   octopus.closeAdmin();
+                   octopus.setCurrentCat(catCopy);
                     // should be careful that after the event is triggered,
                     //render() must be called, since render()
                     //is called first time when optucous.init(), at that time
@@ -102,14 +102,14 @@ var viewOfshowCat={
        this.imgShow=document.querySelector('.right .showCat img');
        this.times=document.querySelector('.right .showCat .times');
        this.imgShow.onclick=function(){
-       octupus.incrementCounter();
+       octopus.incrementCounter();
 
        };
 
        this.render();
     },
     render:function(){
-       var curCat=octupus.getCurrentCat();
+       var curCat=octopus.getCurrentCat();
        this.name.textContent=curCat.name;
        this.imgShow.src=curCat.src;
        this.times.textContent=curCat.counter;
@@ -134,20 +134,20 @@ var viewOfAdmin={
     render:function(){
   // The correct order is: when click on the button, the admin panel shows up.
   // When click the image from the image list, the admin panel should disappear.
-        var curCat=octupus.getCurrentCat();
+        var curCat=octopus.getCurrentCat();
          this.catName.value=curCat.name;
          this.url.value=curCat.url;
          this.click.value=curCat.counter;
 
          this.btn.onclick=function(){
-            octupus.openAdmin();
+            octopus.openAdmin();
          };
          this.cancel.onclick=function(){
-            octupus.closeAdmin();
+            octopus.closeAdmin();
          };
          this.save.onclick=function(e){
-             curCat.name=octupus.getInputValue().catNameValue;
-             curCat.counter=octupus.getInputValue().clickValue;
+             curCat.name=octopus.getInputValue().catNameValue;
+             curCat.counter=octopus.getInputValue().clickValue;
              viewOfshowCat.render();
              e.preventDefault();
        };
@@ -155,7 +155,7 @@ var viewOfAdmin={
 };
 
 
-octupus.init();
+octopus.init();
 
 
 
