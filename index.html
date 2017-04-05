@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Untitled</title>
+        <style>
+        *{box-sizing: border-box;}
+        .zone{
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+        }
+        .left {width:30%;}
+        .right{width:65%;}
+         ul{
+            list-style: none;
+         }
+         li img {
+            max-width: 100%
+         }
+
+         .admin {
+            margin-top: 20px;
+         }
+
+
+        </style>
+    </head>
+    <body>
+    <div class='zone'>
+       <div class='left'><ul></ul></div>
+       <div class='right'>
+           <div class='showCat'>
+             <p class='des'></p>
+             <img src='' alt=''>
+             <p class='times'></p>
+              <button class='btn'>Admin</button>
+               <div class='admin' style="visibility: hidden">
+                <form>
+                    <label>name: <input class='name' type='text'></label>
+                    <label>url: <input class='url' type='text'></label>
+                    <label>#clicks: <input class='click' type='text'></label>
+                    <button class='cancel'>Cancel</button>
+                    <button class='save'>Save</button>
+                </form>
+              </div>
+           </div>
+       </div>
+    </div>
+
+        <script src='main.js'></script>
+    </body>
+</html>
